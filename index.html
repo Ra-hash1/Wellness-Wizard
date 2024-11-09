@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Wizard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Wellness Wizard</h1>
+        <p class="developed-by">Capstone Project</p>
+    </header>
+
+    <main role="main">
+        <section class="current-readings">
+            <h2>Current Sensor Readings</h2>
+            <div class="sensor-readings">
+                <div>
+                    <h3>Temperature</h3>
+                    <div id="tempReading" class="reading">-</div>
+                    <div class="unit">°F</div>
+                    <div id="tempPrediction" class="prediction"></div>
+                    <div class="normal-range">Normal: 97.7°F - 99.5°F</div>
+                </div>
+                <div>
+                    <h3>Heart Rate</h3>
+                    <div id="hrReading" class="reading">-</div>
+                    <div class="unit">bpm</div>
+                    <div id="hrPrediction" class="prediction"></div>
+                    <div class="normal-range">Normal: 60 - 100 bpm</div>
+                </div>
+                <div>
+                    <h3>ECG</h3>
+                    <div id="ecgReading" class="reading">-</div>
+                    <div class="unit">mV</div>
+                    <div id="ecgPrediction" class="prediction"></div>
+                    <div class="normal-range">Normal: -0.5 - 0.5 mV</div>
+                </div>
+                <div>
+                    <h3>EMG</h3>
+                    <div id="emgReading" class="reading">-</div>
+                    <div class="unit">µV</div>
+                    <div id="emgPrediction" class="prediction"></div>
+                    <div class="normal-range">Normal: 0 - 500 µV</div>
+                </div>
+                <div>
+                    <h3>Oximeter</h3>
+                    <div id="oximeterReading" class="reading">-</div>
+                    <div class="unit">%</div>
+                    <div id="oximeterPrediction" class="prediction"></div>
+                    <div class="normal-range">Normal: 95% - 100%</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="health-recommendations">
+            <h2>Health Recommendations</h2>
+            <div id="healthRecommendations">
+                Analyzing your health data...
+            </div>
+        </section>
+
+        <section class="environmental-factors">
+            <h2>Environmental Factors</h2>
+            <div id="environmentalAlerts">
+                Retrieving environmental data based on your location...
+            </div>
+        </section>
+
+        <section class="charts">
+            <h2>Real-Time Data & Trends</h2>
+            <div class="chart-container">
+                <canvas id="temperatureTrend"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="heartRateTrend"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="ecgTrend"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="emgTrend"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="oximeterTrend"></canvas>
+            </div>
+        </section>
+
+        <section class="sos-section">
+            <button class="sos-button">SOS</button>
+            <button class="stop-alarm-button" style="display: none;">Stop Alarm</button>
+        </section>
+
+        <section class="location-info">
+            <div id="locationInfo"></div>
+        </section>
+    </main>
+
+    <footer>
+        © 2024 Wellness Wizard
+    </footer>
+
+    <audio id="alarmSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

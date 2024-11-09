@@ -1,0 +1,211 @@
+:root {
+    --primary-color: #0077be;
+    --secondary-color: #1e3799;
+    --accent-color: #f39c12;
+    --bg-color: #f5f6fa;
+    --text-color: #2f3640;
+    --card-bg: #ffffff;
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.developed-by {
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+section {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.sensor-readings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.sensor-readings > div {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.sensor-readings > div:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.reading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.unit {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.prediction {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+.normal-range {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-top: 0.5rem;
+}
+
+.chart-container {
+    margin-bottom: 2rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    height: 300px;
+}
+
+.sos-button, .stop-alarm-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 1rem;
+}
+
+.sos-button {
+    background-color: var(--danger-color);
+}
+
+.sos-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.stop-alarm-button {
+    background-color: var(--success-color);
+}
+
+.stop-alarm-button:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+.location-info {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+#healthRecommendations, #environmentalAlerts {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .sensor-readings {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .reading {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 119, 190, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 119, 190, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 119, 190, 0);
+    }
+}
+
+.sensor-readings > div {
+    animation: pulse 2s infinite;
+}
