@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update environmental factors
     async function updateEnvironmentalFactors(latitude, longitude) {
         try {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=3dcaf325ce3b8d0aa96596cc9bdbf67d&units=metric`);
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=Apiid"&units=metric`);
             const data = await response.json();
             
             let environmentalInfo = "<strong>Current Environmental Conditions:</strong><br>";
